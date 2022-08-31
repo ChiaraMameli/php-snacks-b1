@@ -8,9 +8,9 @@ Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”;
 
 $access = false;
 
-$name = $_GET['name'];
-$mail = $_GET['mail'];
-$age = $_GET['age'];
+$name = $_GET['name'] ?? '';
+$mail = $_GET['mail'] ?? '';
+$age = $_GET['age'] ?? '';
 
 $conditions = (mb_strlen($name) > 3) && (strpos($mail, '@')) && (strpos($mail, '.')) && (is_numeric($age));
 

@@ -6,7 +6,7 @@ Ogni array figlio avrà come chiave una data in questo formato: DD-MM-YYYY es 01
 e come valore un array di post associati a quella data. Stampare ogni data con i relativi post.
 */
 
-$posts = [
+$posts_by_date = [
     '10/01/2019' => [
         [
             'title' => 'Post 1',
@@ -44,6 +44,8 @@ $posts = [
         ]
     ],
 ];
+
+$dates = array_keys($posts_by_date);
 ?>
 
 <!DOCTYPE html>
@@ -77,33 +79,21 @@ $posts = [
     }
 </style>
 <body>
-    
-        <h3>10/01/2019</h3>
-        <?php for($i = 0; $i < count($posts['10/01/2019']); $i++) : ?>
-            <div class="card">
-                <h4 class="title"><?=$posts['10/01/2019'][$i]['title']?></h4>
-                <span class="author"><?=$posts['10/01/2019'][$i]['author']?></span>
-                <p class="text"><?=$posts['10/01/2019'][$i]['text']?></p>
-            </div>
-        <?php endfor; ?>
-   
-        <h3>10/02/2019</h3>
-        <?php for($i = 0; $i < count($posts['10/02/2019']); $i++) : ?>
-            <div class="card">
-                <h4 class="title"><?=$posts['10/02/2019'][$i]['title']?></h4>
-                <span class="author"><?=$posts['10/02/2019'][$i]['author']?></span>
-                <p class="text"><?=$posts['10/02/2019'][$i]['text']?></p>
-            </div>
-        <?php endfor; ?>
 
-        <h3>15/05/2019</h3>
-        <?php for($i = 0; $i < count($posts['15/05/2019']); $i++) : ?>
-            <div class="card">
-                <h4 class="title"><?=$posts['15/05/2019'][$i]['title']?></h4>
-                <span class="author"><?=$posts['15/05/2019'][$i]['author']?></span>
-                <p class="text"><?=$posts['15/05/2019'][$i]['text']?></p>
-            </div>
-        <?php endfor; ?>
+    <?php for($i = 0; $i < count($dates); $i++) : 
+        $date = $dates[$i];
+        $posts = $posts_by_date[$date];
+    ?>
+    <h3><?=$date?></h3>
+            <?php for($j = 0; $j < count($posts); $j++) :?>
+                <div class="card">
+                    <h4><?=$posts[$j]['title']?></h4>
+                    <span><?=$posts[$j]['text']?></span>
+                    <p><?=$posts[$j]['author']?></p>
+                </div>
+            <?php endfor; ?>
+
+    <?php endfor; ?>
 
 </body>
 </html>

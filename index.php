@@ -1,5 +1,5 @@
 <?php
-$folds = ['snack1.php', 'snack2.php', 'snack3.php'];
+$folds = ['snack1.php', 'snack2.php', 'snack3.php', 'snack4.php', 'snack5.php'];
 ?>
 
 <!DOCTYPE html>

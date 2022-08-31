@@ -62,7 +62,7 @@ $april_eleventh = [
     <h2>NBA Games - April 11 2022</h2>
     <ul>
         <?php for($i = 0; $i < count($april_eleventh); $i++) : ?>
-            <li><?= $april_eleventh[$i][0]['home_team']?> - <?= $april_eleventh[$i][1]['visitors']?> | <?= $april_eleventh[$i][0]['score']?>-<?= $april_eleventh[$i][1]['score']?> </li>
+            <li><?= "{$april_eleventh[$i][0]['home_team']} - {$april_eleventh[$i][1]['visitors']} | {$april_eleventh[$i][0]['score']}-{$april_eleventh[$i][1]['score']}"?> </li>
         <?php endfor; ?>
     </ul>
     
